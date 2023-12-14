@@ -1,5 +1,7 @@
 package com.example.mp_project;
 
+import java.io.Serializable;
+
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,7 +14,7 @@ import lombok.Setter;
 @Builder
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class Movie {
+public class Movie implements Serializable {
     String aplcName;
     String coreHarmRsn;
     String direName;

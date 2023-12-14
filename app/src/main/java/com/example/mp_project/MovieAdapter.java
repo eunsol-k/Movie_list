@@ -1,5 +1,7 @@
 package com.example.mp_project;
 
+import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -72,6 +74,21 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
             prodYear = itemView.findViewById(R.id.prodYear);
             direName = itemView.findViewById(R.id.direName);
             gradeName = itemView.findViewById(R.id.gradeName);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Context context = v.getContext();
+
+                    Movie movie = items.get(getAdapterPosition());
+                    Intent intent = new Intent(v.getContext(), MovieInform.class);
+
+                    intent.putExtra("Movie", movie);
+                    context.startActivity(intent);
+
+                    Log.d("RecyclerView", "position = " + getAdapterPosition());
+                }
+            });
         }
 
         public void setItem(Movie item) {
