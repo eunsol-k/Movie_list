@@ -2,7 +2,6 @@
 <resources>
     <string name="app_name">MP_project</string>
     <string-array name="search_spin">
-        <item>전체</item>
         <item>제목명</item>
         <item>배급사명</item>
     </string-array>

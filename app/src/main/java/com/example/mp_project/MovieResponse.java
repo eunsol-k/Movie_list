@@ -1,6 +1,6 @@
 package com.example.mp_project;
 
-public class Response {
+public class MovieResponse {
     ResponseHeader header;
     ResponseBody body;
 }

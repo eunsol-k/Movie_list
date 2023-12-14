@@ -20,6 +20,7 @@
             app:cardElevation="5dp" >
 
             <LinearLayout
+                android:foreground="?attr/selectableItemBackground"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -38,14 +39,34 @@
                     android:layout_weight="1"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/useTitle"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Title"
-                        android:textColor="#000000"
-                        android:textSize="22sp"
-                        android:maxLines="1"/>
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/useTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:layout_weight="1"
+                            android:text="Title"
+                            android:textColor="#000000"
+                            android:textSize="22sp" />
+
+                        <TextView
+                            android:id="@+id/oriTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:text="gradeName"
+                            android:textColor="#0B3861"
+                            android:textSize="18sp"
+                            />
+
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/aplcName"
@@ -53,7 +74,7 @@
                         android:layout_height="wrap_content"
                         android:paddingRight="10dp"
                         android:text="aplcName"
-                        android:textColor="#FF0000FF"
+                        android:textColor="#0B3861"
                         android:textSize="14sp" />
 
                     <LinearLayout
@@ -67,7 +88,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="prodYear"
-                            android:textColor="#FF0000FF"
+                            android:textColor="#0B3861"
                             android:textSize="14sp" />
 
                         <TextView
@@ -77,7 +98,7 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="direName"
-                            android:textColor="#FF0000FF"
+                            android:textColor="#0B3861"
                             android:textSize="14sp" />
 
                         <TextView
@@ -87,7 +108,7 @@
                             android:layout_weight="1"
                             android:gravity="right"
                             android:text="gradeName"
-                            android:textColor="#FF0000FF"
+                            android:textColor="#0B3861"
                             android:textSize="14sp" />
 
                     </LinearLayout>
