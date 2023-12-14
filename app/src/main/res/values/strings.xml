@@ -1,3 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">MP_project</string>
+    <string-array name="spinner_search_array">
+        <item>전체</item>
+        <item>제목명</item>
+        <item>영화사명</item>
+    </string-array>
 </resources>

@@ -59,9 +59,11 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         }
 
         public void setItem(ResponseMovie item) {
+            /*
             textView.setText(item.movieNm);
             Log.d("영화명 : ", textView.getText().toString());
             textView2.setText(item.audiCnt + " 명");
+             */
         }
 
     }

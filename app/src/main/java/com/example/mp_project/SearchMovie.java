@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -74,9 +75,21 @@ public class SearchMovie extends AppCompatActivity {
     public void makeRequest() {
         String search = binding.editText.getText().toString();
 
+        binding.searchSp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
         StringRequest request = new StringRequest(
                 Request.Method.GET,
-                url,
+                "", // url
                 response -> {
                     println("응답 > " + response);
                     processResponse(response);
@@ -101,6 +114,7 @@ public class SearchMovie extends AppCompatActivity {
             requestQueue = Volley.newRequestQueue(getApplicationContext());
         }
 
+        /*
         recyclerView = findViewById(R.id.recyclerView);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
@@ -108,6 +122,7 @@ public class SearchMovie extends AppCompatActivity {
 
         adapter = new MovieAdapter();
         recyclerView.setAdapter(adapter);
+         */
     }
 
     public void println(String data) {
@@ -115,7 +130,9 @@ public class SearchMovie extends AppCompatActivity {
     }
 
 
+
     public void processResponse(String response) {
+        /*
         Gson gson = new Gson(); // 변수 선언 || variable declaration
         MovieList movieList = gson.fromJson(response, MovieList.class); // 응답받은 JSON 문자열을 특정 타입의 클래스로 변환 || transforming specific class type from received JSON String
 
@@ -128,5 +145,6 @@ public class SearchMovie extends AppCompatActivity {
         }
 
         adapter.notifyDataSetChanged();
+        */
     }
 }
