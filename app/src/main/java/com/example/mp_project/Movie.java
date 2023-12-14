@@ -1,21 +1,19 @@
 package com.example.mp_project;
 
-public class ResponseMovie {
-    String resultCode;
-    String resultMsg;
+public class Movie {
+    String aplcName;
+    String coreHarmRsn;
     String direName;
     String gradeName;
-    String rtCoreHarmRsnNm;
     String leadaName;
     String mvAssoName;
     String oriTitle;
     String prodYear;
     String prodcName;
     String prodcNatnlName;
-    String screTime;
-    String stadCont;
-    String useTitle;
-    String coreHarmRsn;
+    String rtCoreHarmRsnNm;
+    String rtDate;
+    String rtNo;
     String rtStdName1;
     String rtStdName2;
     String rtStdName3;
@@ -23,11 +21,8 @@ public class ResponseMovie {
     String rtStdName5;
     String rtStdName6;
     String rtStdName7;
+    String screTime;
+    String stadCont;
+    String useTitle;
     String workCont;
-    String rtNo;
-    String rtDate;
-    String aplcName;
-    String numOfRows;
-    String pageNo;
-    String totalCount;
 }
