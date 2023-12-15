@@ -92,10 +92,23 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         }
 
         public void setItem(Movie item) {
+            String title = item.useTitle;
+            String aplc = item.aplcName;
+            int index = 6;
             String grade;
-            useTitle.setText(item.useTitle);
+
+            if (title.length() > 5) {
+                if (!title.substring(0, index).contains(",") & !title.substring(0, index).contains(" ")) {
+                    index -= 1;
+                }
+                title = title.substring(0, index) + "…";
+            }
+            if(aplc.length() > 20)
+                aplc = aplc.substring(0, 21) + "…";
+
+            useTitle.setText(title);
             oriTitle.setText(item.oriTitle);
-            aplcName.setText(item.aplcName);
+            aplcName.setText(aplc);
             prodYear.setText(item.prodYear);
             direName.setText(item.direName);
 

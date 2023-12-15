@@ -48,7 +48,6 @@
                             android:id="@+id/useTitle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:maxLines="1"
                             android:layout_weight="1"
                             android:text="Title"
                             android:textColor="#000000"

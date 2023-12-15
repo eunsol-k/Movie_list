@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.TypedValue;
 
 import com.example.mp_project.databinding.MovieInformBinding;
 import com.example.mp_project.databinding.SearchMovieBinding;
@@ -35,6 +36,20 @@ public class MovieInform extends AppCompatActivity {
     }
 
     private void setView() {
+        int useTitleSize = 16;
+        int oriTitleSize = 14;
+        if(movie.useTitle.length() > 6 || movie.direName.length() > 9 || movie.direName.length() > 9) {
+            if(movie.useTitle.length() > 14) {
+                useTitleSize -= 2;
+                oriTitleSize -= 2;
+            }
+
+            binding.useTitle.setTextSize(TypedValue.COMPLEX_UNIT_DIP, useTitleSize);
+            binding.oriTitle.setTextSize(TypedValue.COMPLEX_UNIT_DIP, oriTitleSize);
+            binding.direName.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 13);
+            binding.aplcName.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 13);
+        }
+
         binding.useTitle.setText(movie.useTitle);
         binding.oriTitle.setText(movie.oriTitle);
         binding.direName.setText(movie.direName);

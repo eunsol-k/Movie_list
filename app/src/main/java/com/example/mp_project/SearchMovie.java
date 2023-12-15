@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
@@ -99,13 +100,17 @@ public class SearchMovie extends AppCompatActivity {
     private void sendMessage() {
         binding.editText.setOnEditorActionListener((textView, i, keyEvent) -> {
             View view = this.getCurrentFocus();
-            if(i == EditorInfo.IME_ACTION_DONE) {
+            if(i == EditorInfo.IME_ACTION_SEARCH
+                || (keyEvent != null && keyEvent.getAction() == KeyEvent.ACTION_DOWN
+                    && keyEvent.getKeyCode() == KeyEvent.KEYCODE_ENTER)) {
                 sendRequest(selected, binding.editText.getText().toString());
                 binding.editText.clearFocus();
+
                 if(view != null) {
                     InputMethodManager imm = (InputMethodManager) context.getSystemService(INPUT_METHOD_SERVICE);
                     imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
                 }
+
                 return true;
             }
             return true;
